@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:like_me/match.dart';
+import 'package:like_me/profile.dart';
 
 void main() {
   runApp(const LikeMee());
@@ -84,10 +85,8 @@ class _ActionButtonState extends State<ActionButton> {
                 // setState(() {
                 //   wordChange = "WELCOME TO \n MY LIFE";
                 // });
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MatchScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MatchScreen()));
               }),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
@@ -106,7 +105,12 @@ class _ActionButtonState extends State<ActionButton> {
           Padding(
             padding: const EdgeInsets.only(bottom: 0.0, top: 0.0),
             child: ElevatedButton(
-              onPressed: (() {}),
+              onPressed: (() {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfileScreen()));
+              }),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 elevation: 0,
