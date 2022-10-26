@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:like_me/header.dart';
+import 'package:like_me/profile_edit_screen.dart';
 
 class MatchScreen extends StatelessWidget {
-   MatchScreen({super.key});
+  MatchScreen({super.key});
 
   final HeaderAppBar header = HeaderAppBar();
 
@@ -93,7 +94,13 @@ class MatchScreen extends StatelessWidget {
                           onPressed: () {},
                           icon: const Icon(Icons.chat_bubble)),
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.person)),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const ProfileEditScreen();
+                            }));
+                          },
+                          icon: const Icon(Icons.person)),
                     ],
                   ),
                 )

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HeaderAppBar {
-
   Color primaryColor = Colors.purple;
+
+  Color bgColor = Colors.white;
 
   PreferredSizeWidget addHeader() {
     return AppBar(
@@ -36,6 +37,14 @@ class HeaderAppBar {
           child: Icon(Icons.drive_file_rename_outline_sharp),
         )
       ],
+    );
+  }
+
+  Scaffold scafoldFunc(Widget body) {
+    return Scaffold(
+      appBar: addHeader(),
+      backgroundColor: bgColor,
+      body: body,
     );
   }
 }

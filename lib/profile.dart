@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:like_me/header.dart';
+import 'package:like_me/preview.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -155,12 +156,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ElevatedButton(
                         onPressed: (() {
                           if (_formKey.currentState!.validate()) {
-                            final snackbar = SnackBar(
-                                content: Text(
-                                    "My username is ${username.text} \nMobile Number is ${mobileNumber.text}\nPassword is ${password.text}"));
+                            // final snackbar = SnackBar(
+                            //     content: Text(
+                            //         "My username is ${username.text} \nMobile Number is ${mobileNumber.text}\nPassword is ${password.text}"));
 
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(snackbar);
+                            // ScaffoldMessenger.of(context)
+                            //     .showSnackBar(snackbar);
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return PreviewScreen(
+                                  username: username.text,
+                                  mobileNumber: mobileNumber.text,
+                                  password: password.text);
+                            }));
                           }
                         }),
                         style: ElevatedButton.styleFrom(
